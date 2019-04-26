@@ -46,6 +46,7 @@ public class gui {
 	boolean s_key = false;
 	boolean d_key = false;
 	boolean f_key = false;
+	boolean j_key = false;
 	boolean k_key = false;
 	boolean l_key = false;
 	
@@ -55,7 +56,7 @@ public class gui {
 	boolean last_key = true;
 	int remainder;
 	int remainder_2 = 0;
-	String folder_path = "C:\\";
+	String folder_path = "D:\\";
 	
 	/**
 	 * Launch the application.
@@ -86,7 +87,7 @@ public class gui {
 	private void initialize() {
 		frame = new JFrame();
 		frame.getContentPane().setBackground(Color.BLACK);
-		frame.setBounds(100, 100, 450, 148);
+		frame.setBounds(100, 100, 517, 169);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
@@ -107,12 +108,12 @@ public class gui {
 		
 		TextField textField_3 = new TextField();
 		textField_3.setEditable(false);
-		textField_3.setBounds(178, 75, 50, 22);
+		textField_3.setBounds(233, 75, 50, 22);
 		frame.getContentPane().add(textField_3);
 		
 		TextField textField_4 = new TextField();
 		textField_4.setEditable(false);
-		textField_4.setBounds(233, 75, 50, 22);
+		textField_4.setBounds(288, 75, 50, 22);
 		frame.getContentPane().add(textField_4);
 		
 		TextField txtSdfs = new TextField();
@@ -136,6 +137,11 @@ public class gui {
 		textField_6.setColumns(10);
 		textField_6.setBounds(198, 30, 86, 20);
 		frame.getContentPane().add(textField_6);
+		
+		TextField textField_7 = new TextField();
+		textField_7.setEditable(false);
+		textField_7.setBounds(178, 75, 50, 22);
+		frame.getContentPane().add(textField_7);
 		
 		JButton btnNewButton = new JButton("Enable");
 		btnNewButton.addMouseListener(new MouseAdapter() {
@@ -189,80 +195,114 @@ public class gui {
 		                    	else if (info.vkCode == 83) {
 		                    		//s		          
 		                    		s_key = !s_key;
+		                    		one_one(folder_path);
 		                    		if(s_key){
 		                    			textField.setBackground(Color.GREEN);
 		                    			writeToFile( folder_path + "Z updown.txt", "1");
+		                    			writeToFile( folder_path + "djmax.txt", "set_val(BUTTON_12, 100.0);");
 		                    		}
 		                    		else{
 		                    			textField.setBackground(new Color(-986896, true));
 		                    			writeToFile( folder_path + "Z updown.txt", "0");
+		                    			writeToFile( folder_path + "djmax.txt", "set_val(BUTTON_12, 0.0);");
 		                    		}
 		                    		writeToFile( folder_path + "Z keys.txt", "83");
-		                    		one_one(folder_path);
+//		                    		one_one(folder_path);
 	                   				last_frame = current_frame;
 	                   				textField_6.setText(Integer.toString(current_frame));
 		                    	}
 		                    	else if (info.vkCode == 68) {
 		                    		//s		          
 		                    		d_key = !d_key;
+		                    		one_one(folder_path);
 		                    		if(d_key){
 		                    			textField_1.setBackground(Color.GREEN);
 		                    			writeToFile( folder_path + "Z updown.txt", "1");
+		                    			writeToFile( folder_path + "djmax.txt", "set_val(BUTTON_10, 100.0);");
 		                    		}
 		                    		else{
 		                    			textField_1.setBackground(new Color(-986896, true));
 		                    			writeToFile( folder_path + "Z updown.txt", "0");
+		                    			writeToFile( folder_path + "djmax.txt", "set_val(BUTTON_10, 0.0);");
 		                    		}
 		                    		writeToFile( folder_path + "Z keys.txt", "68");
-		                    		one_one(folder_path);
+//		                    		one_one(folder_path);
 	                   				last_frame = current_frame;
 	                   				textField_6.setText(Integer.toString(current_frame));
 		                    	}
 		                    	else if (info.vkCode == 70) {
 		                    		//s		          
 		                    		f_key = !f_key;
+		                    		one_one(folder_path);
 		                    		if(f_key){
 		                    			textField_2.setBackground(Color.GREEN);
 		                    			writeToFile( folder_path + "Z updown.txt", "1");
+		                    			writeToFile( folder_path + "djmax.txt", "set_val(BUTTON_13, 100.0);");
 		                    		}
 		                    		else{
 		                    			textField_2.setBackground(new Color(-986896, true));
 		                    			writeToFile( folder_path + "Z updown.txt", "0");
+		                    			writeToFile( folder_path + "djmax.txt", "set_val(BUTTON_13, 0.0);");
 		                    		}
 		                    		writeToFile( folder_path + "Z keys.txt", "70");
+//		                    		one_one(folder_path);
+	                   				last_frame = current_frame;
+	                   				textField_6.setText(Integer.toString(current_frame));
+		                    	}
+		                    	else if (info.vkCode == 74) {
+		                    		//s		          
+		                    		j_key = !j_key;
 		                    		one_one(folder_path);
+		                    		if(j_key){
+		                    			textField_7.setBackground(Color.GREEN);
+		                    			writeToFile( folder_path + "Z updown.txt", "1");
+		                    			writeToFile( folder_path + "djmax.txt", "set_val(BUTTON_17, 100.0);");
+		                    		}
+		                    		else{
+		                    			textField_7.setBackground(new Color(-986896, true));
+		                    			writeToFile( folder_path + "Z updown.txt", "0");
+		                    			writeToFile( folder_path + "djmax.txt", "set_val(BUTTON_17, 0.0);");
+		                    		}
+		                    		writeToFile( folder_path + "Z keys.txt", "75");
+//		                    		one_one(folder_path);
 	                   				last_frame = current_frame;
 	                   				textField_6.setText(Integer.toString(current_frame));
 		                    	}
 		                    	else if (info.vkCode == 75) {
 		                    		//s		          
 		                    		k_key = !k_key;
+		                    		one_one(folder_path);
 		                    		if(k_key){
 		                    			textField_3.setBackground(Color.GREEN);
 		                    			writeToFile( folder_path + "Z updown.txt", "1");
+		                    			writeToFile( folder_path + "djmax.txt", "set_val(BUTTON_14, 100.0);");
 		                    		}
 		                    		else{
 		                    			textField_3.setBackground(new Color(-986896, true));
 		                    			writeToFile( folder_path + "Z updown.txt", "0");
+		                    			writeToFile( folder_path + "djmax.txt", "set_val(BUTTON_14, 0.0);");
 		                    		}
 		                    		writeToFile( folder_path + "Z keys.txt", "75");
-		                    		one_one(folder_path);
+//		                    		one_one(folder_path);
 	                   				last_frame = current_frame;
 	                   				textField_6.setText(Integer.toString(current_frame));
 		                    	}
 		                    	else if (info.vkCode == 76) {
 		                    		//s		          
 		                    		l_key = !l_key;
+		                    		one_one(folder_path);
 		                    		if(l_key){
 		                    			textField_4.setBackground(Color.GREEN);
 		                    			writeToFile( folder_path + "Z updown.txt", "1");
+		                    			writeToFile( folder_path + "djmax.txt", "set_val(BUTTON_15, 100.0);");
 		                    		}
 		                    		else{
 		                    			textField_4.setBackground(new Color(-986896, true));
 		                    			writeToFile( folder_path + "Z updown.txt", "0");
+		                    			writeToFile( folder_path + "djmax.txt", "set_val(BUTTON_15, 0.0);");
 		                    		}
 		                    		writeToFile( folder_path + "Z keys.txt", "76");
-		                    		one_one(folder_path);
+//		                    		one_one(folder_path);
 	                   				last_frame = current_frame;
 	                   				textField_6.setText(Integer.toString(current_frame));
 		                    	}
@@ -315,7 +355,7 @@ public class gui {
 			}
 		});
 //////////////////////END Keyboard Struct////////////////////////////////////////////////////////////////////////
-		btnNewButton.setBounds(289, 74, 135, 23);
+		btnNewButton.setBounds(344, 75, 135, 23);
 		frame.getContentPane().add(btnNewButton);
 		
 		JLabel lblCurrent = new JLabel("Current");
@@ -361,5 +401,6 @@ public class gui {
 			remainder_2 = 0;
 		}
 		writeToFile(path + "Z delay.txt", Integer.toString(delay));
+		writeToFile( folder_path + "djmax.txt", "wait("+Integer.toString(delay)+");");
 	}
 }
